@@ -1,8 +1,19 @@
+# Core dashboard
 streamlit
+
+# Data handling
 pandas
 numpy
+
+# Visualization
 plotly
-pillow
-reportlab
-python-pptx
-kaleido
+kaleido   # for PNG/PDF/PPT exports
+
+# File formats
+openpyxl  # Excel (.xlsx)
+pillow    # image handling
+reportlab # PDF exports
+python-pptx # PowerPoint exports
+
+# Utilities
+altair    # sometimes required by Streamlit
