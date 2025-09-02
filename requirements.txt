@@ -1,0 +1,8 @@
+streamlit
+pandas
+numpy
+plotly
+pillow
+reportlab
+python-pptx
+kaleido
