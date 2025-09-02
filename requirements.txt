@@ -1,19 +1,19 @@
-# Core dashboard
-streamlit
+# ---- Streamlit Cloud / Python 3.11 friendly ----
+streamlit>=1.36
 
-# Data handling
-pandas
-numpy
+# ---- Data ----
+pandas>=2.2
+numpy>=1.26
 
-# Visualization
-plotly
-kaleido   # for PNG/PDF/PPT exports
+# ---- Charts & static export ----
+plotly>=5.22
+kaleido==0.2.1    # Plotly static image engine (bundles Chromium; no Chrome needed)
 
-# File formats
-openpyxl  # Excel (.xlsx)
-pillow    # image handling
-reportlab # PDF exports
-python-pptx # PowerPoint exports
+# ---- Excel I/O ----
+openpyxl>=3.1     # .xlsx reader/writer
+xlrd>=2.0         # only if you read legacy .xls
 
-# Utilities
-altair    # sometimes required by Streamlit
+# ---- Optional media/exports (used in your app) ----
+Pillow>=10.3      # image handling
+reportlab>=4.1    # PDF generation
+python-pptx>=0.6.23  # PowerPoint export
