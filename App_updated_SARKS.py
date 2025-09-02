@@ -955,29 +955,36 @@ def render_footer_bar():
             border-top: 1px solid rgba(255,255,255,.15);
             color: {TEXT};
             font-size: 14px; padding: 12px 18px;
-            z-index: 9999; box-shadow: 0 -6px 20px rgba(0,0,0,.28);
+            z-index: 99999; box-shadow: 0 -6px 20px rgba(0,0,0,.28);
             font-weight: 700;
           }}
           .app-footer-bar .row {{
             display:flex; align-items:center; justify-content:space-between; gap: 10px;
             max-width: 1540px; margin: 0 auto;
+            /* keep clear of any bottom-right chat/help badges */
+            padding-right: max(96px, env(safe-area-inset-right, 0px));
+            padding-left:  max(24px,  env(safe-area-inset-left, 0px));
           }}
           .block-container {{ padding-bottom: 96px; }}
+          .footer-link {{
+            color: {TEXT}; font-weight: 900; cursor: pointer;
+            border-bottom: 1px dashed rgba(255,255,255,0.45);
+            text-decoration: none; transition: color .2s ease, border-color .2s ease;
+          }}
+          .footer-link:hover {{ color: {BRAND}; border-bottom-color: {BRAND}; }}
         </style>
 
         <div class="app-footer-bar">
           <div class="row">
-            <div style="text-align:left;">
-              © 2025 • SARKS IntelliLine — BOPET FilmLine KPI Dashboard
-            </div>
-            <div style="text-align:right;">
-              Version-01
-            </div>
+            <!-- put "Powered by SARKS" on the LEFT so it won't be hidden -->
+            <div><a class="footer-link" href="?dev=1" target="_self">{FOOTER_RIGHT_TEXT}</a></div>
+            <div>{FOOTER_LEFT}</div>
           </div>
         </div>
         """,
         unsafe_allow_html=True,
     )
+
 
 def render_about_developer_page():
     """
