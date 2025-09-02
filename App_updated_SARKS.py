@@ -963,27 +963,21 @@ def render_footer_bar():
             max-width: 1540px; margin: 0 auto;
           }}
           .block-container {{ padding-bottom: 96px; }}
-          .footer-link {{
-            color: {TEXT}; font-weight: 900; cursor: pointer;
-            border-bottom: 1px dashed rgba(255,255,255,0.45);
-            text-decoration: none; transition: color .2s ease, border-color .2s ease;
-          }}
-          .footer-link:hover {{ color: {BRAND}; border-bottom-color: {BRAND}; }}
         </style>
 
         <div class="app-footer-bar">
           <div class="row">
-            <div>{FOOTER_LEFT}</div>
-            <div>
-              <!-- Footer "crafted by SARKS" opens About page -->
-              <a class="footer-link" href="?dev=1" target="_self">{FOOTER_RIGHT_TEXT}</a>
+            <div style="text-align:left;">
+              © 2025 • SARKS IntelliLine — BOPET FilmLine KPI Dashboard
+            </div>
+            <div style="text-align:right;">
+              Version-01
             </div>
           </div>
         </div>
         """,
         unsafe_allow_html=True,
     )
-
 
 def render_about_developer_page():
     """
